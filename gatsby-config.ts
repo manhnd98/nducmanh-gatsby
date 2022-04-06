@@ -42,6 +42,21 @@ const config: GatsbyConfig = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "blog",
+        path: `./src/blog/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "templates",
+        path: `./src/templates/`,
+      },
+    },
+    `gatsby-transformer-remark`,
   ],
 };
 
