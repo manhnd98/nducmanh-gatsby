@@ -6,9 +6,15 @@ module.exports = {
         extend: {
             spacing: {
                 '160': '40rem',
+            },
+            colors: {
+                white: {
+                    'alpha-40': '#fff6'
+                }
             }
         },
         
     },
-    plugins: [],
+    plugins: [
+    ],
 }
