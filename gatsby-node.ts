@@ -52,8 +52,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
     }
   `);
 
-  console.log(result);
-
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       console.log(node.fields.slug);
       createPage({

@@ -69,11 +69,35 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "assets",
+        path: `./src/assets/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "templates",
         path: `./src/templates/`,
       },
     },
     `gatsby-transformer-remark`,
+    "gatsby-plugin-postcss",
+
+    {
+      resolve: "@chakra-ui/gatsby-plugin",
+      options: {
+        /**
+         * @property {boolean} [resetCSS=true]
+         * if false, this plugin will not use `<CSSReset />
+         */
+        resetCSS: true,
+        /**
+         * @property {boolean} [isUsingColorMode=true]
+         * if false, this plugin will not use <ColorModeProvider />
+         */
+        isUsingColorMode: true,
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-sass`,
