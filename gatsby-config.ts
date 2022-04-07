@@ -69,13 +69,6 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "assets",
-        path: `./src/assets/`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: "templates",
         path: `./src/templates/`,
       },
