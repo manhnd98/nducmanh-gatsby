@@ -18,7 +18,7 @@ function BlogPost({ data }: PostInterface) {
   return <div>
     <h1>{post.frontmatter.title}</h1>
     <small>{post.frontmatter.date}</small>
-    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+    <div className='markdown-body' dangerouslySetInnerHTML={{ __html: post.html }} />
   </div>;
 }
 
