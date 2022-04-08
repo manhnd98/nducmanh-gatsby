@@ -2,12 +2,16 @@
 title: Awesome Blog Post Title
 author: Nikola
 date: 2020-07-15
+imageUrl: /post-static/macbook.jpg
+nextUrl: hello
+nextTitle: hello
+prevUrl: hello
+prevTitle: hello
+tags: react,angular,typescript
 ---
 
 # Data Spark
-
 ## Các command hay dùng trong dự án
-
 ### 1. Chuyển user (su)
 
 ```bash
@@ -185,3 +189,6 @@ Tuy nhiên, lệnh `rm` như trên chỉ có thể xóa được file. Để th�
 ```bash
 rm -r ./backup # r la recursive, xoa ca cac file trong folder
 ```
+
+
+![https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb](https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb)
