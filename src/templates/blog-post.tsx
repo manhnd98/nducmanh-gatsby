@@ -25,7 +25,7 @@ interface PostInterface {
 
 function BlogPost({ data }: PostInterface) {
   const post = data.markdownRemark;
-  const tags = post.frontmatter.tags.split(",");
+  const tags = post.frontmatter.tags.length > 0 && post.frontmatter.tags?.split(",");
   return (
     <React.Fragment>
       <Navbar></Navbar>
@@ -38,7 +38,7 @@ function BlogPost({ data }: PostInterface) {
         />
 
         <div className="mt-4">
-          {tags.map((tag) => (
+          {tags && tags.map((tag) => (
             <Tag
               key={tag}
               variant="solid"
@@ -51,26 +51,36 @@ function BlogPost({ data }: PostInterface) {
           ))}
         </div>
 
-        <div className="mt-8 flex justify-between">
-          <Link to={post.frontmatter.nextUrl}>
-            <Button
-              leftIcon={<ArrowBackIcon />}
-              colorScheme="teal"
-              variant="outline"
-            >
-              {post.frontmatter.nextTitle}
-            </Button>
-          </Link>
-          <Link to={post.frontmatter.nextUrl}>
-            <Button
-              rightIcon={<ArrowForwardIcon />}
-              colorScheme="teal"
-              variant="outline"
-            >
-              {post.frontmatter.nextTitle}
-            </Button>
-          </Link>
-        </div>
+        {post.frontmatter.nextTitle && post.frontmatter.prevTitle && (
+          <div className="mt-8 flex justify-between">
+            {post.frontmatter.prevTitle ? (
+              <Link to={post.frontmatter.prevUrl}>
+                <Button
+                  leftIcon={<ArrowBackIcon />}
+                  colorScheme="teal"
+                  variant="outline"
+                >
+                  {post.frontmatter.prevTitle}
+                </Button>
+              </Link>
+            ) : (
+              <div></div>
+            )}
+            {post.frontmatter.nextTitle ? (
+              <Link to={post.frontmatter.nextUrl}>
+                <Button
+                  rightIcon={<ArrowForwardIcon />}
+                  colorScheme="teal"
+                  variant="outline"
+                >
+                  {post.frontmatter.nextTitle}
+                </Button>
+              </Link>
+            ) : (
+              <div></div>
+            )}
+          </div>
+        )}
       </div>
 
       <FooterComponent></FooterComponent>
