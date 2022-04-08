@@ -101,6 +101,7 @@ const config: GatsbyConfig = {
         sassRuleModulesTest: /\.mod\.s(a|c)ss$/,
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
 };
 

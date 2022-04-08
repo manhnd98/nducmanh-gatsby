@@ -11,10 +11,13 @@ module.exports = {
                 white: {
                     0: '#ffffff',
                     'alpha-40': '#fff6'
+                },
+                navbar: {
+                    dark: '#20202380'
                 }
             }
         },
-        
+
     },
     plugins: [
     ],

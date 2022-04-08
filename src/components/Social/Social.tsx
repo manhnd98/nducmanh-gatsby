@@ -42,7 +42,7 @@ function SocialComponent() {
             <button className="inline-flex h-10 justify-center items-center hover:underline-offset-2 hover:underline hover:bg-white-0 rounded-md px-5">
               <span className="mr-2">
                 <svg
-                  fill="#000000"
+                  fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 30 30"
                   height="1em"
