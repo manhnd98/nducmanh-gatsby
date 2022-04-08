@@ -2,7 +2,7 @@ import { Container } from "@chakra-ui/react";
 import { graphql } from "gatsby";
 import React, { Fragment } from "react";
 import Navbar from "../components/Navbar/Navbar";
-import PostItemComponent from "../components/Post-Item/PostItem";
+import PostItemComponent from "../components/PostItem/PostItem";
 
 interface Props {
   data: {
