@@ -34,17 +34,19 @@ function BlogListComponent({ data }: Props) {
       <Navbar></Navbar>
       <Container maxW="60ch">
         <div className="max-w-screen-sm mx-auto pt-20">
-          <h1 className="font-bold text-xl mb-4">Posts</h1>
-          <div className="grid grid-cols-2 gap-5">
-            {posts.map((post) => (
-              <PostItemComponent
-                key={post.id}
-                imageUrl={post.frontmatter.imageUrl}
-                title={post.frontmatter.title}
-                alt={post.frontmatter.alt}
-                url={`/posts` + post.fields.slug}
-              />
-            ))}
+          <div className="mx-6">
+            <h1 className="font-bold text-xl mb-4">Posts</h1>
+            <div className="grid grid-cols-2 gap-5">
+              {posts.map((post) => (
+                <PostItemComponent
+                  key={post.id}
+                  imageUrl={post.frontmatter.imageUrl}
+                  title={post.frontmatter.title}
+                  alt={post.frontmatter.alt}
+                  url={`/posts` + post.fields.slug}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </Container>
