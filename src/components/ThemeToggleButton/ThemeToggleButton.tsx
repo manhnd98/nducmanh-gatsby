@@ -5,8 +5,7 @@ import React from 'react';
 
 const ThemeToggleButton = () => {
   const { toggleColorMode } = useColorMode();
-  
-  console.log(useColorModeValue('light', 'dark'))
+
 
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
