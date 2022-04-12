@@ -3,13 +3,13 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     // Used for the site title and SEO
-    title: `My Blog Title`,
+    title: `Nguyen Duc Manh`,
     // Used to provide alt text for your avatar
-    author: `My Name`,
+    author: `Nguyen Duc Manh`,
     // Used for SEO
     description: `My site description...`,
     // Used for resolving images in social cards
-    siteUrl: `https://example.com`,
+    siteUrl: `https://nducmanh.com`,
     // Used for social links in the root footer
     social: [
       {
