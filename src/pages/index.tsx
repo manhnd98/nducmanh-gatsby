@@ -14,7 +14,7 @@ const IndexPage = () => {
     <div className="w-full h-full">
       <Navbar></Navbar>
 
-      <div className={`${isMobile ? 'h-72 w-72 -mb-10 pt-10' : 'h-160 max-w-screen-sm -mb-44'} mx-auto`}>
+      <div className={` desktop:h-160 desktop:max-w-screen-sm desktop:-mb-44 mobile:h-72 mobile:max-w-xs mobile:-mb-10 mobile:pt-10 mx-auto`}>
         {typeof document !== `undefined` && <LandComponent />}
       </div>
       <div className="max-w-screen-sm m-auto">

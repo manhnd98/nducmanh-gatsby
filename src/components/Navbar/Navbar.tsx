@@ -1,10 +1,10 @@
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
     Button,
-    Popover,
-    PopoverBody,
-    PopoverContent,
-    PopoverTrigger
+    IconButton,
+    Menu,
+    MenuButton,
+    MenuList
 } from "@chakra-ui/react";
 import { Link } from "gatsby";
 import React from "react";
@@ -21,7 +21,7 @@ function Navbar() {
             </Link>
           </div>
           <div className="flex flex-1 dark:text-white w-full justify-between mobile:justify-items-end mobile:content-end mobile:justify-end">
-            <div className="flex-1 flex text-base font-medium content-center items-center mobile:hidden">
+            <div className="flex-1 flex text-base font-medium content-center items-center mobile:hidden laptop:flex">
               <Link to="/">
                 <Button variant="link">
                   <span>Works</span>
@@ -35,31 +35,27 @@ function Navbar() {
               </Link>
             </div>
             <ThemeToggleButton />
-            <div className="ml-4 hidden mobile:block">
-              <Popover>
-                <PopoverTrigger>
-                  <Button
-                    marginInlineEnd={0}
-                    leftIcon={<HamburgerIcon className='m-0' marginInlineEnd="0" margin="0" />}
-                    className="m-0"
-                  ></Button>
-                </PopoverTrigger>
-                <PopoverContent w="120px">
-                  <PopoverBody className="flex flex-col flex-grow">
-                    <Link to="/">
-                      <Button variant="link">
-                        <span>Works</span>
-                      </Button>
-                    </Link>
-
-                    <Link to="/posts">
-                      <Button variant="link">
-                        <span>Posts</span>
-                      </Button>
-                    </Link>
-                  </PopoverBody>
-                </PopoverContent>
-              </Popover>
+            <div className="ml-4 hidden mobile:block laptop:hidden">
+              <Menu>
+                <MenuButton
+                  as={IconButton}
+                  aria-label="Options"
+                  icon={<HamburgerIcon />}
+                  variant="outline"
+                />
+                <MenuList>
+                  <Link to="/">
+                    <Button variant="link">
+                      <span>Works</span>
+                    </Button>
+                  </Link>
+                  <Link to="/posts">
+                    <Button variant="link">
+                      <span>Posts</span>
+                    </Button>
+                  </Link>
+                </MenuList>
+              </Menu>
             </div>
           </div>
         </div>
