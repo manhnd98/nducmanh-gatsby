@@ -1,8 +1,8 @@
-import { useDimensions } from "@chakra-ui/react";
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { MeshBasicMaterial } from "three";
 import { GLTFLoader, OrbitControls } from "three-stdlib";
+import { useWindowSize } from '../../hooks/window-resize';
 
 type LandObject = THREE.Object3D & {
   material: THREE.Material;
@@ -11,7 +11,8 @@ type LandObject = THREE.Object3D & {
 function LandComponent() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const elementRef = useRef<HTMLDivElement>(null);
-  const dimensions = useDimensions(elementRef);
+  const windowSize = useWindowSize();
+  const dimensions = elementRef.current?.getBoundingClientRect();
   const texture = new THREE.TextureLoader().load("/baked.jpg");
   const poleLightMaterial = new MeshBasicMaterial({
     color: 0xffffff,
@@ -32,7 +33,7 @@ function LandComponent() {
       alpha: true,
     });
 
-    const { width, height } = dimensions.borderBox;
+    const { width, height } = dimensions;
 
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -41,7 +42,7 @@ function LandComponent() {
 
   // Create camera when component mounts
   if (dimensions && !camera) {
-    const { width, height } = dimensions.borderBox;
+    const { width, height } = dimensions;
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
     camera.position.set(4, 2, 4);
     scene.add(camera);
@@ -96,12 +97,12 @@ function LandComponent() {
   });
 
   useEffect(() => {
-    if (!dimensions) {
+    if (!elementRef.current || ! camera) {
       return;
     }
 
-    const { width, height } = dimensions.borderBox;
-    console.log(dimensions);
+    const { width, height } = elementRef.current.getBoundingClientRect();
+
     // Update camera aspect ratio
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
@@ -109,7 +110,7 @@ function LandComponent() {
     // Update renderer size
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  }, [dimensions]);
+  }, [windowSize]);
 
   return (
     <div ref={elementRef} className="h-full w-full">
