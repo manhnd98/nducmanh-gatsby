@@ -102,6 +102,19 @@ const config: GatsbyConfig = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-shiki`,
+            options: {
+              theme: "nord", // Default: 'nord'
+            },
+          },
+        ],
+      },
+    },
   ],
 };
 
