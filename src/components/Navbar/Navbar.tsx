@@ -4,6 +4,7 @@ import {
     IconButton,
     Menu,
     MenuButton,
+    MenuItem,
     MenuList
 } from "@chakra-ui/react";
 import { Link } from "gatsby";
@@ -45,14 +46,14 @@ function Navbar() {
                 />
                 <MenuList>
                   <Link to="/">
-                    <Button variant="link">
-                      <span>Works</span>
-                    </Button>
+                    <MenuItem>
+                        <span>Works</span>
+                    </MenuItem>
                   </Link>
                   <Link to="/posts">
-                    <Button variant="link">
-                      <span>Posts</span>
-                    </Button>
+                    <MenuItem>
+                    <span>Posts</span>
+                    </MenuItem>
                   </Link>
                 </MenuList>
               </Menu>
