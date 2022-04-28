@@ -5,8 +5,11 @@ interface ISocial {
 
 export interface ISiteMetadata {
   author: string;
-  description: string;
+  defaultDescription: string;
   siteUrl: string;
-  title: string;
+  defaultTitle: string;
+  defaultImage: string;
   site: ISocial[];
+
+  titleTemplate: string;
 }

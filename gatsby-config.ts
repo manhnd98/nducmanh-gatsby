@@ -10,6 +10,8 @@ const config: GatsbyConfig = {
     description: `My site description...`,
     // Used for resolving images in social cards
     siteUrl: `https://nducmanh.com`,
+    image: ``,
+    titleTemplate: "%s · Nguyen Duc Manh",
     // Used for social links in the root footer
     social: [
       {

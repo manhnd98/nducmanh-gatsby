@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 import FooterComponent from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import SEO from '../components/Seo/Seo';
 
 interface PostInterface {
   data: {
@@ -17,6 +18,7 @@ interface PostInterface {
         nextUrl: string;
         prevTitle: string;
         prevUrl: string;
+        description: string;
       };
       html: string;
     };
@@ -29,6 +31,7 @@ function BlogPost({ data }: PostInterface) {
     post.frontmatter.tags.length > 0 && post.frontmatter.tags?.split(",");
   return (
     <React.Fragment>
+        <SEO title={post.frontmatter.title} description={post.frontmatter.description} image={post.frontmatter.imageUrl}/>
       <Navbar></Navbar>
       <div className="mx-6">
         <div className="max-w-screen-sm mx-auto pt-32 mb-12">

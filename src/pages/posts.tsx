@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import React, { Fragment } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import PostItemComponent from "../components/PostItem/PostItem";
+import SEO from "../components/Seo/Seo";
 
 interface Props {
   data: {
@@ -31,6 +32,7 @@ function BlogListComponent({ data }: Props) {
   console.log(posts);
   return (
     <Fragment>
+      <SEO/>
       <Navbar></Navbar>
       <Container maxW="60ch">
         <div className="max-w-screen-sm mx-auto pt-20">
