@@ -8,6 +8,7 @@ nextTitle: ''
 prevUrl: ''
 prevTitle: ''
 tags: ''
+description: ''
 ---
 
 Friends, I’m updating my portfolio with some recent activities and preparing a small blog to share my experience in web development.
