@@ -8,7 +8,7 @@ function ProfileComponent() {
         <div>
           <div className="block text-4xl font-bold pb-2">Manh Nguyen Duc</div>
           <div className="block text-base">
-            Software Engineer (A Big Fan Of JavaScript)
+            Software Engineer
           </div>
         </div>
         <div className="ml-8">
@@ -22,7 +22,7 @@ function ProfileComponent() {
       </div>
 
       <div className="text-base text-justify mt-4">
-        Manh is a software engineer with 3+ years of experience facilitating
+        Manh is a software engineer with 4+ years of experience facilitating
         cutting-edge solutions with a wide range of e-commerce application and
         technology skills. Proven ability to leverage full-stack expertise to
         build interactive and user-centered website designs to scale.

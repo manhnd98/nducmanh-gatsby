@@ -23,6 +23,10 @@ function BioComponent() {
           <div className="font-bold mr-4">2020</div>
           <div>Worked at Toshiba Software Development</div>
         </div>
+        <div className="flex">
+          <div className="font-bold mr-4">2021</div>
+          <div>Start a new position at CMC Global</div>
+        </div>
       </div>
     </div>
   );
