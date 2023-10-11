@@ -114,6 +114,12 @@ const config: GatsbyConfig = {
               theme: "nord", // Default: 'nord'
             },
           },
+          {
+            resolve: 'gatsby-plugin-s3',
+            options: {
+              bucketName: "nducmanh"
+            }
+          }
         ],
       },
     },
